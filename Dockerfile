@@ -2,9 +2,9 @@ FROM node:latest
 
 WORKDIR /app
 
-ADD ./package.json ./index.ts ./
+COPY ./ ./
 
-RUN npm install
+RUN npm install && npm run tsc
 
 # Expose our running port
 EXPOSE 3000
